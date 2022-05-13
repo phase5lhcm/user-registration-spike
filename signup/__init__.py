@@ -1,6 +1,7 @@
 from flask import Flask 
 from flask_sqlalchemy import SQLAlchemy
 
+
 app = Flask(__name__)
 ENV = 'dev'
 app.config['SECRET_KEY'] = 'e92f34a96126929f18aff116'

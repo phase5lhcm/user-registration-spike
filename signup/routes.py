@@ -1,6 +1,7 @@
 from flask import render_template, request
 from signup.models import User
 from signup import app, db
+from signup.forward_confirmation import send_confirmation
 
 @app.route('/')
 def home():
@@ -18,6 +19,7 @@ def signup():
             data = User(username=user)
             db.session.add(data)
             db.session.commit()
+            send_confirmation(user)
             return render_template('success.html')
         return render_template('index.html', message="Account already exists!")
     
