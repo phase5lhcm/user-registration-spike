@@ -9,3 +9,13 @@ If you need to have postgresql@9.5 first in your PATH, run:
 
 >>> from signup import db 
 >>> db.create_all()
+
+create app
+heroku create user-registration-spike
+
+add postgres addon
+heroku addons:create heroku-postgresql:hobby-dev --app user-reg
+
+get db url
+heroku config --app user-registration-spike
+
